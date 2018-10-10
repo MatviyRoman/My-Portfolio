@@ -1,0 +1,307 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	text-align: center;
+	background: url('../img/bg/bg8.jpg') no-repeat center fixed;
+	background-size: cover;
+	height: 100%;
+	color: #fff;
+}
+
+.wrapper {
+	background: url('../img/bg/popout.png');
+}
+
+header {
+	text-align: center;
+}
+
+header .textLogo {
+	position: relative;
+	top: 247px;
+	z-index: 1;
+}
+
+header h1 {
+	color: blue;
+	text-transform: capitalize;
+	text-shadow: 1px 0px #fff,
+	1px 1px #fff,
+	0px 1px #fff,
+	-1px 1px #fff,
+	-1px 0px #fff,
+	-1px -1px #fff,
+	0px -1px #fff,
+	1px -1px #fff,
+	9px 9px 9px yellow;
+	/* text-shadow: 9px 9px 9px yellow; */
+	font-family: 'Roboto';
+	font-weight: bold;
+}
+
+header p {
+	color: yellow;
+	text-transform: uppercase;
+}
+
+header h1:hover,
+header p:hover {
+	cursor: pointer;
+	--ms-transform: scale(1.1);
+    --o-transform: scale(1.1);
+    transform: scale(1.1);
+    --webkit-transform: scale(1.1); 
+}
+
+header .photo {
+	position: relative;
+	height: 200px;
+	width: 200px;
+	border-radius: 100%;
+	background: #000;
+}
+
+header .photo img:hover {
+	cursor: pointer;
+	--ms-transform: scale(1.3);
+    --o-transform: scale(1.3);
+    transform: scale(1.3);
+    --webkit-transform: scale(1.3);
+}
+
+header .photo img {
+	border-radius: 100%;
+	height: 100%;
+	border: 3px solid #fff;
+}
+
+header nav {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+header nav a:visited,
+header nav a:link {
+	text-decoration: none;
+	color: #fff;
+}
+
+header nav .icon {
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	border: 1px solid #fff;
+	background: #000;
+	opacity: 0.5;
+	margin-right: 5px;
+}
+
+header nav .icon:hover {
+	opacity: 1;
+}
+
+.icon:hover .fa,
+.icon:focus .fa,
+.icon:hover i,
+.icon:focus i,
+.icon:hover img,
+.icon:focus img
+{
+    --ms-transform: scale(1.3);
+    --o-transform: scale(1.3);
+    transform: scale(1.3);
+    --webkit-transform: scale(1.3);
+}
+
+header nav img {
+	position: relative;
+	top: 20%;
+	left: 1%;
+	width: 40%;
+}
+
+header nav .fa {
+	position: relative;
+	top: 25%;
+	width: 40%;
+}
+
+.content {
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.content .error {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background: red;
+	border-radius: 15px;
+}
+
+.content #page1 {
+	display: block;
+}
+
+.content #page2,
+.content #page3,
+.content #page4,
+.content #page5 {
+	display: none;
+}
+
+.content .project1,
+.content .project2,
+.content .project3,
+.content .project4,
+.content .project5,
+.content .project6,
+.content .project7 {
+	margin-bottom: 30px;
+}
+
+.content img {
+	border: 3px solid #000;
+}
+
+.content img:hover {
+	box-shadow: 5px 5px 5px -5px -5px -5px 10px blue,
+	--ms-transform: scale(1.1);
+    --o-transform: scale(1.1);
+    transform: scale(1.1);
+    --webkit-transform: scale(1.1);
+    border: 3px solid blue;
+}
+
+.content .project1 img,
+.content .project6 img {
+	
+}
+
+.content .project2 img,
+.content .project4 img {
+	
+}
+
+.content .project3 img,
+.content .project5 img,
+.content .project7 img {
+	
+}
+
+.aboutMe {
+	display: none;
+	background: url('../img/bg/about.jpg') !important;
+	text-align: center;
+	color: #fff;
+	border-radius: 15px;
+	background: #fff;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 80%;
+	margin-left: 10%;
+}
+
+.aboutMe h1 {
+	padding-top: 20px;
+	text-transform: capitalize;
+	border-bottom: 3px solid #000;
+}
+
+.aboutMe h2,
+.aboutMe h3 {
+	margin-right: 10px;
+	text-transform: capitalize;
+}
+
+.aboutMe h3 {
+	margin-left: 20px;
+}
+
+.aboutMe p {
+	text-transform: capitalize;
+}
+
+.aboutMe ol {
+	margin-left: 30px;
+	margin-bottom: 10px;
+	margin-right: 15px;
+	text-align: left;
+}
+
+#contact {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #000;
+	color: #fff;
+	z-index: 2;
+	opacity: 0.9;
+	border-radius: 15px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#contact h1 {
+	text-transform: capitalize;
+	margin-bottom: 30px;
+}
+
+/* #contact input {
+	opacity: 1 !important;
+} */
+
+
+#contact input[type=text] {
+	border: 10px solid black;
+	/* background: rgb(f,f,f);  
+	    background: transparent\9 !important;  
+	    background: rgba(f,f,f,9) !important; */
+}
+
+#contact .w-100 {
+	margin-top: 20px;
+}
+
+#contact .message {
+	padding-bottom: 50px;
+}
+
+#contact .submit {
+	/* margin-top: 30px !important; */
+}
+
+#contact a {
+	text-transform: capitalize;
+}
+
+footer .page-link {
+	opacity: 0.9;
+}
+
+footer .copyright {
+	font-weight: bold;
+	padding-bottom: 30px;
+}
+
+footer .copyright p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: #000;
+	opacity: 0.8;
+}
+
+footer .copyright p>a {
+	opacity: 1;
+}
+
+@media screen and (max-width: 425px) {
+	#contact a.closeWindow {
+		position: relative;
+		left: -70px;
+	}
+}
