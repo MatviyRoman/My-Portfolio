@@ -204,10 +204,14 @@ header nav .fa {
 	margin-left: 10%;
 }
 
+.aboutMe .line {
+	border-bottom: 3px solid #000 !important;
+	width: 100% !important;
+}
+
 .aboutMe h1 {
 	padding-top: 20px;
 	text-transform: capitalize;
-	border-bottom: 3px solid #000;
 }
 
 .aboutMe h2,
@@ -220,6 +224,19 @@ header nav .fa {
 	margin-left: 20px;
 }
 
+.aboutMe h3.certificate {
+	cursor: pointer;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 5px;
+	color: red;
+}
+
+.aboutMe h3.certificate:hover {
+	color: #fff;
+	border: 1px solid red;
+}
+
 .aboutMe p {
 	text-transform: capitalize;
 }
@@ -229,6 +246,46 @@ header nav .fa {
 	margin-bottom: 10px;
 	margin-right: 15px;
 	text-align: left;
+}
+
+#certificate {
+	display: none;
+	background: url(../img/bg/certificate-bg.jpg) no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+	border-radius: 25px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+#certificate h1 {
+	color: #fff;
+	text-shadow: 
+	1px 1px #000,
+	1px -1px #000,
+	-1px -1px #000,
+	-1px 1px #000;
+	padding-bottom: 20px;
+}
+
+#certificate .certificate-1,
+#certificate .certificate-2,
+#certificate .certificate-3,
+#certificate .certificate-4,
+#certificate .certificate-5,
+#certificate .certificate-6,
+#certificate .certificate-7,
+#certificate .certificate-8,
+#certificate .certificate-9,
+#certificate .certificate-10 {
+	margin-bottom: 30px;
+}
+
+#certificate img {
+	border-radius: 25px;
+	border: 2px solid #000;
 }
 
 #contact {
@@ -250,10 +307,6 @@ header nav .fa {
 	text-transform: capitalize;
 	margin-bottom: 30px;
 }
-
-/* #contact input {
-	opacity: 1 !important;
-} */
 
 
 #contact input[type=text] {

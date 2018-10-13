@@ -5,13 +5,26 @@ $(window).on('load', function(){
 		$('.content').toggle();
 		$('#pagination').toggle();
 		$('nav').toggle();
-	})
+	});
 	$('.aboutMe .x').click(function(){
 		$('.aboutMe').toggle();
 		$('.content').toggle();
 		$('#pagination').toggle();
 		$('nav').toggle();
-	})
+	});
+});
+
+
+/*Show & Hide My Certificate*/
+$(window).ready(function(){
+	$('.aboutMe h3.certificate').click(function(){
+		$('#certificate').toggle();
+		$('.aboutMe').toggle();
+	});
+	$('#certificate .certClose').click(function(){
+		$('#certificate').toggle();
+		$('.aboutMe').toggle();
+	});
 });
 
 
@@ -19,18 +32,18 @@ $(window).on('load', function(){
 $(window).on('load', function(){
 	$('.contact').click(function(){
 		$('#contact').toggle();
-	})
+	});
 	$('.closeWindow').click(function(){
 		$('#contact').toggle();
-	})
-})
+	});
+});
 
 
 /*Change BG body*/
 $(document).ready(function(){
 	$('header .textLogo p').dblclick(function(){
 		$('body').css('background-image', "url('../img/bg/bg.jpg')");
-	})
+	});
 });
 
 
@@ -38,7 +51,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('header .textLogo h1').dblclick(function(){
 		$('.wrapper').css('background-image', "url('../img/css.jpg')");
-	})
+	});
 });
 
 
@@ -55,8 +68,7 @@ $(window).on('load', function(){
 		$('.content #page3').removeClass('.active');
 		$('.content #page4').removeClass('.active');
 		$('.content #page5').removeClass('.active');
-
-	})
+	});
 	$('footer .page2').click(function(){
 		$('.content #page1').hide();
 		$('.content #page2').show();
@@ -68,7 +80,7 @@ $(window).on('load', function(){
 		$('.content #page3').removeClass('active');
 		$('.content #page4').removeClass('active');
 		$('.content #page5').removeClass('active');
-	})
+	});
 	$('footer .page3').click(function(){
 		$('.content #page1').hide();
 		$('.content #page2').hide();
@@ -80,7 +92,7 @@ $(window).on('load', function(){
 		$('.content #page3').addClass('active');
 		$('.content #page4').removeClass('active');
 		$('.content #page5').removeClass('active');
-	})
+	});
 	$('footer .page4').click(function(){
 		$('.content #page1').hide();
 		$('.content #page2').hide();
@@ -92,7 +104,7 @@ $(window).on('load', function(){
 		$('.content #page3').removeClass('active');
 		$('.content #page4').addClass('active');
 		$('.content #page5').removeClass('active');
-	})
+	});
 	$('footer .page5').click(function(){
 		$('.content #page1').hide();
 		$('.content #page2').hide();
@@ -104,8 +116,17 @@ $(window).on('load', function(){
 		$('.content #page3').removeClass('active');
 		$('.content #page4').removeClass('active');
 		$('.content #page5').addClass('active');
-	})
-})
+	});
+});
+
+
+/*Active Page Click*/
+$(window).on('load', function(){
+	$('li').click(function() {
+ 	$('li').removeClass('active');
+  	$(this).addClass('active');
+	});
+});
 
 
 
