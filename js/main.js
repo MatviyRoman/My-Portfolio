@@ -125,6 +125,8 @@ $(window).on('load', function(){
 	$('li').click(function() {
  	$('li').removeClass('active');
   	$(this).addClass('active');
+  	/*$('li').removeClass('disabled');
+  	$(this).addClass('disabled');*/
 	});
 });
 
