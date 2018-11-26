@@ -316,7 +316,7 @@
                                 Command Line
                             </li>
                             <li>
-                                PHP/MySQL
+                                <s>PHP/MySQL</s>
                             </li>
                         </ol>
                     </div>
@@ -405,16 +405,15 @@
                         send to me message
                     </h1>
                     <div class="row">
-                        <input type="text" placeholder="First name" class="col-md-2">
-                        <input type="text" placeholder="Last name" class="col-md-2">
-                        <input type="text" placeholder="Phone number" class="col-md-2">
-                        <input type="text" placeholder="Email" class="col-md-2">
-                        <div class="w-100"></div>
-                        <input type="text" placeholder="Message" class="message col-md-8">
-                        <div class="w-100"></div>
-                        <a href="./index.html" class="submit mt-auto btn btn-outline-info">
-                            submit
-                        </a>
+                        <form action="mailto:roman@matviy.pp.ua" enctype="text/plain" >
+                            <input type="text" name="first name" placeholder="First name" class="col-md-2">
+                            <input type="text" name="last name" placeholder="Last name" class="col-md-2">
+                            <input type="text"  name="phone number" placeholder="Phone number" class="col-md-2">
+                            <input type="text"  name="email" placeholder="Email" class="col-md-2">
+                            <div class="w-100"></div>
+                            <input type="text"  name="message" placeholder="Message" class="message col-md-8">
+                            <div class="w-100"></div>
+                            <input type="submit" name="submit" class="submit mt-auto btn btn-outline-info">
                         <a href="./index.html" class="closeWindow mt-auto offset-10 btn btn-outline-danger">
                             close window
                         </a>
