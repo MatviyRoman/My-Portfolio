@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div id="myApp">
+        <header class="col-12 mb-2 p-5">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <h1>
+                        Фреймворк
+                        <span>VUE JS</span>
+                        : быстрый старт,
+                        первые результаты
+                    </h1>
+                </div>
+            </div>
+        </header>
+        <content class="col-12 mt-5">
+            <div class="container">
+                <div class="row justify-content-start">
+                    <h2>Видео презентация курса «Фреймворк VUE JS. Руководство для современной веб-разработки»</h2>
+                    <div class="lesson pb-4"
+                        v-for="(lesson, index) of lessons"
+                        class="list-group-item list-group-item-action pointer">
+                        <h3 class="p-4">{{ lesson.title }}</h4>
+                        <div class="title col-12 mb-3">
+                            <div class="row">
+                                <img v-bind:src="lesson.img" :alt="lesson.title" class="mr-md-5">
+                                <div id="desc" class="row">
+                                    <b>Тема:</b> <span class="ml-2">VUE JS</span>
+                                    <div class="w-100"></div>
+                                    <b>Время ролика:</b> <span class="ml-2">{{ lesson.time }}</span>
+                                    <div class="w-100"></div>
+                                    <b>Cложность:</b> <span class="ml-2">легкая</span>
+                                    <div class="w-100"></div>
+                                    <b>Автор:</b> <span class="ml-2">Владилен Минин</span>
+                                </div>
+                            </div>
+                        </div>
+                        {{ lesson.desc }}
+                        <br>
+                        <div class="row justify-content-center">
+
+                            <div class="col-8 embed-responsive embed-responsive-4by3 mt-3 mb-4">
+                                <video width="320" height="240" controls>
+                                    <source :src="lesson.video" type="video/mp4">
+                                    Your browser does not support HTML5 video.
+                                </video>
+                            </div>
+                            <div class="w-100"></div>
+                            <a :href="lesson.download" class="mr-md-4 mb-sm-3 mb-xs-3">
+                                <img src="img/download-source.jpg" :alt="lesson.title">
+                            </a>
+                            <a href="zip/wwwvuejs2.zip">
+                                <img src="img/download.jpg" :alt="lesson.title">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </content>
+
+        <footer class="mb-5">
+            <div class="container">
+                <div class="row">
+                    @ Roman Matviy 2018
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
