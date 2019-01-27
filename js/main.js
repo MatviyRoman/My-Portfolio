@@ -1,726 +1,689 @@
-$(document).ready(function() {
+/*Show & Hide About Me*/
+$(window).on('load', function(){
+	$('header .photo').click(function(){
+		$('.aboutMe').toggle();
+		$('.content').toggle();
+		$('#pagination').toggle();
+		$('nav').toggle();
+	});
+	$('.aboutMe .x').click(function(){
+		$('.aboutMe').toggle();
+		$('.content').toggle();
+		$('#pagination').toggle();
+		$('nav').toggle();
+	});
+});
 
-  // Fakes the loading setting a timeout
-    setTimeout(function() {
-        $('body').addClass('loaded');
-    }, 3000);
 
+/*Show & Hide My Certificate*/
+$(window).ready(function(){
+	$('.aboutMe h3.certificate').click(function(){
+		$('#certificate').toggle();
+		$('.aboutMe').toggle();
+	});
+	$('#certificate .certClose').click(function(){
+		$('#certificate').toggle();
+		$('.aboutMe').toggle();
+	});
+});
+
+
+/*Show & Close Contact*/
+$(window).on('load', function(){
+	$('.contact').click(function(){
+		$('#contact').toggle();
+	});
+	$('.closeWindow').click(function(){
+		$('#contact').toggle();
+	});
+});
+
+
+/*Change BG body*/
+$(document).ready(function(){
+	$('header .textLogo p').dblclick(function(){
+		$('body').css('background-image', "url('../img/bg/bg.jpg')");
+	});
+});
+
+
+/*Change BG .bg*/
+$(document).ready(function(){
+	$('header .textLogo h1').dblclick(function(){
+		$('.wrapper').css('background-image', "url('../img/css.jpg')");
+	});
+});
+
+
+/*Show & Hide Page*/
+$(window).on('load', function(){
+	$('footer .page1').click(function(){
+		$('.content #page1').show();
+		$('.content #page2').hide();
+		$('.content #page3').hide();
+		$('.content #page4').hide();
+		$('.content #page5').hide();
+		$('.content #page1').addClass('.active');
+		$('.content #page2').removeClass('.active');
+		$('.content #page3').removeClass('.active');
+		$('.content #page4').removeClass('.active');
+		$('.content #page5').removeClass('.active');
+	});
+	$('footer .page2').click(function(){
+		$('.content #page1').hide();
+		$('.content #page2').show();
+		$('.content #page3').hide();
+		$('.content #page4').hide();
+		$('.content #page5').hide();
+		$('.content #page1').removeClass('active');
+		$('.content #page2').addClass('active');
+		$('.content #page3').removeClass('active');
+		$('.content #page4').removeClass('active');
+		$('.content #page5').removeClass('active');
+	});
+	$('footer .page3').click(function(){
+		$('.content #page1').hide();
+		$('.content #page2').hide();
+		$('.content #page3').show();
+		$('.content #page4').hide();
+		$('.content #page5').hide();
+		$('.content #page1').removeClass('active');
+		$('.content #page2').removeClass('active');
+		$('.content #page3').addClass('active');
+		$('.content #page4').removeClass('active');
+		$('.content #page5').removeClass('active');
+	});
+	$('footer .page4').click(function(){
+		$('.content #page1').hide();
+		$('.content #page2').hide();
+		$('.content #page3').hide();
+		$('.content #page4').show();
+		$('.content #page5').hide();
+		$('.content #page1').removeClass('active');
+		$('.content #page2').removeClass('active');
+		$('.content #page3').removeClass('active');
+		$('.content #page4').addClass('active');
+		$('.content #page5').removeClass('active');
+	});
+	$('footer .page5').click(function(){
+		$('.content #page1').hide();
+		$('.content #page2').hide();
+		$('.content #page3').hide();
+		$('.content #page4').hide();
+		$('.content #page5').show();
+		$('.content #page1').removeClass('active');
+		$('.content #page2').removeClass('active');
+		$('.content #page3').removeClass('active');
+		$('.content #page4').removeClass('active');
+		$('.content #page5').addClass('active');
+	});
+});
+
+
+/*Active Page Click*/
+$(window).on('load', function(){
+	$('li').click(function() {
+ 	$('li').removeClass('active');
+  	$(this).addClass('active');
+  	/*$('li').removeClass('disabled');
+  	$(this).addClass('disabled');*/
+	});
 });
 
 
 
-// AboutMe Start
-const aboutMe = (name, num, img, link) => ({name, num, img, link});
-
-const aboutMes = [
-// aboutMe(
-// 	'HTML 5',
-// 	'85',
-// 	'devicon-html5-plain-wordmark colored html',
-// 	''),
-
-aboutMe(
-	'Front-end developer',
-	'Roman',
-	'Matviy',
-	'Lviv, Ukraine',
-	'roman@matviy.pp.ua',
-	'romas6ka',
-	'+380 93 88 00 822',
-	'+380 67 77 19 340',
-	'github.com/MatviyRoman',
-	'linkedin.com/in/MatviyRoman',
-	'facebook.com/romas6ka',
-	'Vue.js, Angular 2, TypeScript, PHP, MySQL',
-	'Vue.js, Node.js, Angular 2 / TypeScript, React, PHP, MySQL, AJAX',
-	'without bad habits, persistent and purposeful, responsible and executive, prone to analytical activity, prone to analytical activity, punctual')]
-// AboutMe End
-
-
-
-// Front-End Start
-const frontEnd = (name, num, img, link) => ({name, num, img, link});
-
-const frontEnds = [
-frontEnd(
-	'HTML 5',
-	'85',
-	'devicon-html5-plain-wordmark colored html',
-	'zip/wwwvuejs2.zip'),
-
-frontEnd(
-	'CSS 3',
-	'80',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-frontEnd(
-	'CSS Flexbox',
-	'78',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-frontEnd(
-	'JavaScript',
-	'40',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip')]
-// Front-End End
-
-
-
-// Back-End Start
-const backEnd = (name, num, img, link) => ({name, num, img, link});
-
-const backEnds = [
-backEnd(
-	'PHP',
-	'20',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-backEnd(
-	'MySQL',
-	'15',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip')]
-// Back-End End
-
-
-
-// Certificates Start
-const certificate = (date, name, cert, link) => ({date, name, cert, link});
-
-const certificates = [
-certificate(
-	'(09/2018)',
-	'HTML Fundamentals',
-	'License 1014-10299461',
-	'https://www.sololearn.com/Certificate/1014-10299461/pdf/'),
-
-certificate(
-	'(09/2018)',
-	'CSS Sertificate',
-	'License 1023-10299461',
-	'https://www.sololearn.com/Certificate/1023-10299461/pdf/'),
-
-certificate(
-	'(10/2018)',
-	'JavaScript Tutorial',
-	'License 1024-10299461',
-	'https://www.sololearn.com/Certificate/1024-10299461/pdf/'),
-
-certificate(
-	'(10/2018)',
-	'jQuery Tutorial',
-	'License 1082-10299461',
-	'https://www.sololearn.com/Certificate/1082-10299461/pdf/')]
-// Certificates End
-
-
-
-// CMS Start
-const cms = (name, num, img, link) => ({name, num, img, link});
-
-const cmss = [
-cms(
-	'OcClass',
-	'75',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-cms(
-	'OpenCart',
-	'80',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-cms(
-	'WordPress',
-	'70',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip')]
-// CMS End
-
-
-
-// Framework Start
-const framework = (name, num, img, link) => ({name, num, img, link});
-
-const frameworks = [
-framework(
-	'Bootstrap',
-	'75',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-framework(
-	'jQuery',
-	'40',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-framework(
-	'VueJS',
-	'30',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-framework(
-	'Angular 2',
-	'20',
-	'devicon-html5-plain-wordmark colored html',
-	'zip/wwwvuejs2.zip')]
-// Framework End
-
-
-
-// Language Start
-const language = (name, num, img, link) => ({name, num, img, link});
-
-const languages = [
-language(
-	'English',
-	'40',
-	'img/1.jpg',
-	''),
-
-language(
-	'Polish',
-	'28',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-language(
-	'Ukrainian',
-	'100',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-language(
-	'Russian',
-	'80',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip')]
-// Language End
-
-
-
-// Links Start
-const link = (name, num, img, link) => ({name, num, img, link});
-
-const links = [
-link(
-	'English',
-	'35',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-link(
-	'Ukrainian',
-	'100',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-link(
-	'Russian',
-	'80',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip')]
-// Links End
-
-
-
-// Social Start
-const social = (name, icon, link) => ({name, icon, link});
-
-const socials = [
-social(
-	'GitHub',
-	'fab fa-github',
-	'https://github.com/MatviyRoman'),
-
-social(
-	'Facebook',
-	'fab fa-facebook',
-	'https://www.facebook.com/romas6ka'),
-
-social(
-	'Skype',
-	'fab fa-skype',
-	'skype:live:romas6ka'),
-
-social(
-	'Viber',
-	'fab fa-viber',
-	'viber:chat?number=+380677719340'),
-
-// social(
-// 	'YouTube',
-// 	'fa fa-youtube',
-// 	'https://www.youtube.com/channel/UCZ1W8CdO3fDnvsobEqkbv6w'),
-
-social(
-	'E-mail',
-	'far fa-envelope',
-	'#contact')]
-// Social End
-
-
-
-// Skills Start
-const skill = (name, num, img, link) => ({name, num, img, link});
-
-const skills = [
-skill(
-	'Browser Developer Tools',
-	'70',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-skill(
-	'PSD to HTML5',
-	'87',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-skill(
-	'Landing Page',
-	'30',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-skill(
-	'Responsive Design',
-	'85',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-skill(
-	'Plugin Elementor',
-	'70',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-skill(
-	'UI / UX Design',
-	'25',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),]
-// Skills End
-
-
-
-// Tool Start
-const tool = (name, num, img, link) => ({name, num, img, link});
-
-const tools = [
-tool(
-	'Command Line',
-	'45',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'FileZilla (FTP)',
-	'90',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'Git',
-	'30',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'GitHub',
-	'80',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'NPM/Webpack',
-	'29',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'Avocode',
-	'90',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'Brackets',
-	'40',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'Sublime Text',
-	'80',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'PhpStorm',
-	'36',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'Visual Studio Code',
-	'49',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'Chrome Browser',
-	'70',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-tool(
-	'Firefox Browser',
-	'70',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip'),
-
-// tool(
-// 	'Slack',
-// 	'0',
-// 	'img/1.jpg',
-// 	'zip/wwwvuejs2.zip'),
-
-tool(
-	'Photoshop',
-	'50',
-	'img/1.jpg',
-	'zip/wwwvuejs2.zip')]
-// Tool End
-
-
-
-// Project Start
-const project = (date, url, github, name, desc, skills) => ({date, url, github, name, desc, skills});
-
-const projects = [
-project(
-	'15 Jan 2019',
-	'camel.matviy.pp.ua',
-	'https://github.com/MatviyRoman/Camel',
-	'Camel Heal',
-	`We have received your resume and are interested in speaking with you! Please find the attached inquiry form. Additionally, please complete the following test assignment: convert home page PSD into html (CamelCo PSD/Images - https://drive.google.com/open?id=1i5Jp0cIjb6K3CUJHrYLFFhk2upM4wQPZ; to access PSD, click file named“Camel HealGCoHome-November 7.psd” and then click “Download”). We would appreciate it if you reviewed, completed, and returned these to us along with the estimated time that you spent on the test assignment. We look forward to speaking with you soon.`,
-	'HTML5, CSS3, Bootstrap 4, jQuery, Responsive Design'),
-
-project(
-	'21 Dec 2018',
-	'home.matviy.pp.ua',
-	'https://github.com/MatviyRoman/HOME',
-	'Home',
-	'Зверстати у відповідності до прикріпленого макету. Необхідні технології: Сss framework: bootstrap 3 або 4 Js framework : Jquery Валідний код та адаптація під мобільні пристрої.',
-	'HTML5, CSS3, Bootstrap 4, jQuery, Responsive Design'),
-
-project(
-	'15 Dec 2018',
-	'magazino.ga',
-	'http://magazino.ga',
-	'magazino.ga',
-	'My Home Project. Wordpress. My design with using plugin Elementor',
-	'HTML5, CSS3, Wordpress, plugin Elementor, Landing Page'),
-
-project(
-	'8 Dec 2018',
-	'pantomax.matviy.pp.ua',
-	'https://github.com/MatviyRoman/Pantomax',
-	'Pantomax',
-	'Сделать верстку с макета и адаптировать ее под мобильные устройства. Ссылка прилагается на макет, адаптивную верстку необходимо сделать на свое усмотрение.',
-	'HTML5, CSS3, Bootstrap 4, jQuery, Responsive Design',
-	'3'),
-
-project(
-	'7 Dec 2018',
-	'todo-list.matviy.pp.ua',
-	'https://github.com/MatviyRoman/todo-list',
-	'todo-list',
-	`Техническое задание: Реализовать todo list (список дел). Функционал: вывод списка задач из базы данных, создание новой задачи, редактирование задачи, удаление задачи. Клиентская часть. Для всего использовать Angular Material Design. Основной компонент приложения - список задач. При открытии страницы должен показываться лоадер (задачи загружаются…). 1.1 Если задач в базе нет, вывести сообщение об этом и кнопку “создать первую задачу”. 1.2 Если есть задачи, список задач в виде таблицы (столбцы - id задачи, текст задачи, дата создания, действия с задачей). Кнопка добавления новой задачи над таблицей. При нажатии на кнопку добавления задачи открывается боковое окно (drawer) с заголовком (toolbar). 2.1 В боковом окне будет расположено текстовое поле + кнопка “добавить задачу”. 2.2 Кнопка должна быть неактивной, если поле пустое. 2.3 При добавлении задачи сначала должен показываться лоадер (подождите, идёт добавление), а затем окно должно закрываться. В случае ошибки должно появляться сообщение (в виде snackbar). 2.4 Добавить ошибку в случае, если введенный текст содержит символ “!”. Т.е. если пользователь ввёл текст “Выполнить испытательное задание!”, то при попытке создать задачу должен сначала показаться лоадер, а затем снова поле с кнопкой + в snackbar должно появиться сообщение с ошибкой. 2.5 После добавления задачи она также добавляется в таблицу на странице. При наведении на строку задачи в таблице, возле текста задачи появляется иконка редактирования (ручка). 3.1 При нажатии на кнопку редактирования открывается модальное окно (dialog) с текстовым полем и кнопками “Отмена” и “Сохранить”. 3.2 При нажатии на “Сохранить” сначала показывается лоадер (progress bar), затем окно закрывается и текст задачи в таблице меняется. В последней колонке (действия с задачей) должна быть кнопка-иконка корзины. 4.1 При нажатии открывается модальное окно (dialog) с подтверждением удаления. 4.2 При подтверждении удаления сначала показывается лоадер (progress bar), затем окно закрывается и задачи удаляется из списка проекта.`,
-	'VueJS, HTML5, CSS3, Bootstrap 4, Responsive Design, Landing Page'),
-
-project(
-	'27 Nov 2018',
-	'travel.matviy.pp.ua',
-	'https://github.com/MatviyRoman/Travel-Agency',
-	'Travel Agency',
-	'Responsive design with psd layouts',
-	'HTML5, CSS3, Bootstrap 3, jQuery, Responsive Design'),
-
-project(
-	'15 Nov 2018',
-	'Roman.Matviy.pp.ua',
-	'https://github.com/MatviyRoman/Roman.Matviy.CV',
-	'Roman.Matviy.CV',
-	'Responsive design with psd layouts Roman.Matviy.CV',
-	'HTML5, CSS3, Bootstrap 4, jQuery, Responsive Design, Landing Page'),
-
-project(
-	'14 Nov 2018',
-	'learn.matviy.pp.ua/JavaScript/',
-	'https://github.com/MatviyRoman/Learn-Theory-of-JS',
-	'Learn Theory of JS',
-	'Responsive design with psd layouts. Learn Theory of JS',
-	'HTML5, CSS3, Bootstrap 3, jQuery, Responsive Design, Landing Page'),
-
-project(
-	'10 Nov 2018',
-	'short-code-vue.matviy.pp.ua',
-	'https://github.com/MatviyRoman/Short-code-vue',
-	'Short code vue',
-	'Learn Theory of vue.js',
-	'VueJS, HTML5, CSS3'),
-
-project(
-	'10 Nov 2018',
-	'vue.matviy.pp.ua',
-	'https://github.com/MatviyRoman/Test-vue.js',
-	'Test vue.js',
-	'Learn Theory of vue.js',
-	'VueJS, HTML5, CSS3'),
-
-project(
-	'9 Nov 2018',
-	'resume.matviy.pp.ua',
-	'https://github.com/MatviyRoman/Old-my-resume',
-	'Old my resume',
-	'Learn Theory of vue.js',
-	'HTML5, CSS3, Bootstrap 3, jQuery, Responsive Design, Landing Page'),
-
-project(
-	'6 Nov 2018',
-	'startup.matviy.pp.ua',
-	'https://github.com/MatviyRoman/Startup.matviy.pp.ua',
-	'Startup',
-	'Responsive design with psd layouts',
-	'HTML5, CSS3, Bootstrap 3, jQuery, Responsive Design'),
-
-project(
-	'1 Nov 2018',
-	'github.com/MatviyRoman/AngularJS',
-	'https://github.com/MatviyRoman/AngularJS/tree/master/angular2-intro',
-	'AngularJS',
-	'AngularJS',
-	'HTML5, CSS3, AngularJS'),
-
-project(
-	'26 Oct 2018',
-	'example.matviy.pp.ua',
-	'https://github.com/MatviyRoman/example.matviy.pp.ua',
-	'example',
-	'Responsive design with psd layouts',
-	'HTML5, CSS3, Bootstrap 3, Responsive Design'),
-
-project(
-	'26 Oct 2018',
-	'gentab.matviy.pp.ua',
-	'https://github.com/MatviyRoman/HTML-Tables-Generation',
-	'HTML Tables Generation',
-	'HTML Tables Generation. My Home Project. Responsive design with psd layouts HTML Tables Generation',
-	'HTML5, CSS3, Bootstrap 3, jQuery, Responsive Design, Landing Page'),
-
-project(
-	'25 Oct 2018',
-	'mytesting.ga',
-	'https://github.com/MatviyRoman/mytesting.ga',
-	'mytesting.ga',
-	'HTML Tables Generation. My Home Project. Responsive design with psd layouts HTML Tables Generation',
-	'HTML5, CSS3, Bootstrap 3, jQuery, Responsive Design'),
-
-project(
-	'10 Oct 2018',
-	'creatives.matviy.pp.ua',
-	'https://github.com/MatviyRoman/Creatives-Project',
-	'Creatives',
-	'Responsive design with psd layouts',
-	'HTML5, CSS3, Bootstrap 4, jQuery, Responsive Design'),
-
-project(
-	'25 Jan 2019',
-	'arnika.matviy.pp.ua',
-	'https://github.com/MatviyRoman/www.arnika.od.ua',
-	'МЦ Арника arnika.od.ua',
-	'Було завдання з оригінального сайту зробити Responsive Design. Оригінал з того, що я робив можна глянути тут http://arnika.matviy.pp.ua/original/index.html',
-	'HTML5, CSS3, Bootstrap 4, Responsive Design'),
-
-project(
-	'7 Oct 2018',
-	'modal.matviy.pp.ua',
-	'https://github.com/MatviyRoman/My-Modal-Window',
-	'Window modal test',
-	'Responsive design with psd layouts. This is my window modal test.',
-	'HTML5, CSS3, Bootstrap 3, jQuery, Responsive Design'),
-
-project(
-	'24 Sep 2018',
-	'bisines.matviy.pp.ua',
-	'https://github.com/MatviyRoman/Bisines-Company-Project',
-	'Bisines-Company',
-	'My project building with bootstrap &amp; jQuery. Responsive design with psd layouts',
-	'HTML5, CSS3, Bootstrap 3, jQuery, Responsive Design')]
-// Project End
-
-
-new Vue ({
-	el: '#myPortfolio',
-	// template:
- //  `<div :style="{width: '55%'}">t</div>`,
-	data: {
-		aboutMes,
-		backEnds,
-		certificates,
-		cmss,
-		frontEnds,
-		frameworks,
-		languages,
-		links,
-		socials,
-		skills,
-		// skill: skills[0],
-		tools,
-		projects,
-		phoneVisibility: false,
-		searchLessons: ''
-	},
-	methods: {
-		selectLesson(lesson,index) {
-			this.lesson = lesson;
-			this.lesson = this.filteredLessons[index]
-			// this.selectLessonIndex = index
-			console.log('click', index);
-		}
-	},
-	computed: {
-		phoneBtnText() {
-			return this.phoneVisibility ? 'Hide phone' : 'Show phone'
-		},
-		filteredLessons() {
-			return this.skills.filter(skill => {
-				return skill.title.indexOf(this.search) > -1 || skill.description.indexOf(this.search) > -1
-			})
-		}
-	},
-	filters: {
-		date(value) {
-			return value.toLocalString()
-		}
-	}
-})
-
-
-
-// $('.skill:has(img[alt="5 copy_200comp.jpg"])').show();
-
-// var i = 38
-// switch (i) {
-//     case ((i>=0 && i<=19)?i:-1): $(".progress-bar").attr("class", "bg-danger"); console.log('0-19'); break;
-//     case ((i>=20 && i<=39)?i:-1): $(".progress-bar").attr("class", "bg-danger"); console.log('20-39'); break;
-//     case ((i>=40 && i<=59)?i:-1): $(".progress-bar").attr("class", "bg-danger"); console.log('40-59'); break;
-//     case ((i>=60 && i<=79)?i:-1): $(".progress-bar").attr("class", "bg-success"); console.log('60-79');
-//     default: console.log('80-100'); break;
-// }
-
-
-
-// let i = skill.num;
-// while (i < skills.length) {
-//   alert( i );
-//   switch (i) {
-//     case ((i>=20 && i<=19)?i:-1): $(this).css("color", "#ffffff"); console.log('0-19');
-//     case ((i>=20 && i<=39)?i:-1): $(".progress-bar").attr("class", "bg-danger"); console.log('20-39');
-//     case ((i>=40 && i<=59)?i:-1): $(".progress-bar").attr("class", "bg-success"); console.log('40-59');
-//     case ((i>=60 && i<=79)?i:-1): $(".progress-bar").attr("class", "bg-info"); console.log('60-79');
-//     default: $(".progress-bar").attr("class", "bg-danger"); console.log('80-100'); break;}
-//   i++;
-// }
-
-// l i = $(".progress-bar b").text();
-
-// switch (i) {
-//     case ((i>=20 && i<=19)?i:-1): $(this).css("color", "#ffffff"); console.log('0-19');
-//     case ((i>=20 && i<=39)?i:-1): $(".progress-bar").attr("class", "bg-danger"); console.log('20-39');
-//     case ((i>=40 && i<=59)?i:-1): $(".progress-bar").attr("class", "bg-success"); console.log('40-59');
-//     case ((i>=60 && i<=79)?i:-1): $(".progress-bar").attr("class", "bg-info"); console.log('60-79');
-//     default: $(".progress-bar").attr("class", "bg-danger"); console.log('80-100'); break;}
-// } i++;}
-
-
-   //  if (content == "high") {
-
-   //      $(this).css("color", "#ffffff");
-   //  }
-   // if (content == "low") {
-
-   //      $(this).css("color", "#ccc");
-   //  }
-   // if (content == "critical") {
-
-   //      $(this).css("color", "#000");
-   //  }
-
-
-
-//    var max_temp = 50, // set maximum expected temperature
-// min_temp = -10, // set minimum temperature
-// temp_range = max_temp - min_temp, // calculate range
-// temp_rating = ((temp - min_temp) / temp_range) * 255 // express value in terms of the range multiplied by 255
-// red = temp_rating, // more temp = more red
-// blue = 255 - temp_rating; // more temp = less blue
-
-// $(document).ready(function(){
-    // $('.progress-bar')​.has(function(){
-        // if($('.progress-bar').has() < 47)
-        //     $(this).removeAttr("class").addClass("cold");
-        // else
-        //     $(this).removeAttr("class").addClass("hot");
-    // })​
+/*TextLogo Animate*/
+/*$(document).ready(function(){
+    $('.textLogo').click(function(){
+        $('p').css('color', 'red')
+            .slideUp(2000),
+            .slideDown(2000);
+    });
+});*/
+
+
+
+/*$(document).ready(function(){
+    $('.bg').on({
+        mouseenter: function(){
+            $(this).css("background-image", "url('/css/images/css.jpg')");
+        },  
+    });    
+});
+*/
+
+
+
+/*$(document).ready(function(){
+	$('header').click(function(){
+		$(function() {
+    	var container = $('body');
+    	var backgrounds = [ 
+      	'url(../portfolio/img/bg/bg1.jpg)',
+      	'url(../portfolio/img/bg/bg2.jpg)',
+      	'url(../portfolio/img/bg/bg3.jpg)',
+      	'url(../portfolio/img/bg/bg4.jpg)',
+      	'url(../portfolio/img/bg/bg5.jpg)',
+      	'url(../portfolio/img/bg/bg6.jpg)',
+      	'url(../portfolio/img/bg/bg7.jpg)',
+      	'url(../portfolio/img/bg/bg8.jpg)'];
+    	var current = 0;
+
+	    function nextBackground() {
+	        container.css(
+	            'background',
+	        backgrounds[current = ++current % backgrounds.length]);
+	    }
+	    $('h1').click(nextBackground);
+	    $('body').();
+	    container.css('background', backgrounds[0]);
+		});
+	});
+});*/
+
+
+
+/*Background Change Image*/
+/*$(document).ready(function(){
+$(function () {
+    var container = $('body');
+    var backgrounds = [
+      'url(../portfolio/img/bg/bg8.jpg)', 
+      'url(../portfolio/img/bg/bg1.jpg)',
+      'url(../portfolio/img/bg/bg2.jpg)',
+      'url(../portfolio/img/bg/bg3.jpg)',
+      'url(../portfolio/img/bg/bg4.jpg)',
+      'url(../portfolio/img/bg/bg5.jpg)',
+      'url(../portfolio/img/bg/bg6.jpg)',
+      'url(../portfolio/img/bg/bg7.jpg)'];
+    var current = 0;
+
+    function nextBackground() {
+        container.css(
+            'background',
+        backgrounds[current = ++current % backgrounds.length]);
+
+        setTimeout(nextBackground, 5000);
+    }
+    setTimeout(nextBackground, 5000);
+    container.css('background', backgrounds[0]);
+});
+});*/
+
+
+
+/*Pagination*/
+/*(function($){
+$('#pagination-demo').twbsPagination({
+  totalPages: 5,
+  visiblePages: 3,
+  onPageClick: function (event, page) {
+    $('#page-content').text('Page ' + page);
+  }
+});
+});
+*/
+
+
+
+// $(window).on('load', function () {
+
+//     var pag1 = $('#pagination'),
+//         destroyAndCreateWithOpts = function(elem, opts) {
+//             elem.twbsPagination('destroy');
+//             elem.twbsPagination(opts);
+//         };
+
+//     QUnit.test("Test destroy called before initialization", function (assert) {
+//         assert.ok(pag1.twbsPagination('destroy'));
+//     });
+
+//     QUnit.test("Test 'getPages' method (EVEN visible pages number)", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {
+//             totalPages: 30
+//         });
+
+//         assert.deepEqual(pag1.twbsPagination('getPages', 1), {currentPage: 1, numeric: [1, 2, 3, 4, 5]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 2), {currentPage: 2, numeric: [1, 2, 3, 4, 5]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 3), {currentPage: 3, numeric: [1, 2, 3, 4, 5]});
+
+//         assert.deepEqual(pag1.twbsPagination('getPages', 4), {currentPage: 4, numeric: [2, 3, 4, 5, 6]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 5), {currentPage: 5, numeric: [3, 4, 5, 6, 7]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 20), {currentPage: 20, numeric: [18, 19, 20, 21, 22]});
+
+//         assert.deepEqual(pag1.twbsPagination('getPages', 27), {currentPage: 27, numeric: [25, 26, 27, 28, 29]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 28), {currentPage: 28, numeric: [26, 27, 28, 29, 30]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 29), {currentPage: 29, numeric: [26, 27, 28, 29, 30]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 30), {currentPage: 30, numeric: [26, 27, 28, 29, 30]});
+//     });
+
+//     QUnit.test("Test 'getPages' method (ODD visible pages number)", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {
+//             totalPages: 30,
+//             visiblePages: 6
+//         });
+
+//         assert.deepEqual(pag1.twbsPagination('getPages', 1), {currentPage: 1, numeric: [1, 2, 3, 4, 5, 6]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 2), {currentPage: 2, numeric: [1, 2, 3, 4, 5, 6]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 3), {currentPage: 3, numeric: [1, 2, 3, 4, 5, 6]});
+
+//         assert.deepEqual(pag1.twbsPagination('getPages', 4), {currentPage: 4, numeric: [2, 3, 4, 5, 6, 7]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 5), {currentPage: 5, numeric: [3, 4, 5, 6, 7, 8]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 20), {currentPage: 20, numeric: [18, 19, 20, 21, 22, 23]});
+
+//         assert.deepEqual(pag1.twbsPagination('getPages', 27), {currentPage: 27, numeric: [25, 26, 27, 28, 29, 30]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 28), {currentPage: 28, numeric: [25, 26, 27, 28, 29, 30]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 29), {currentPage: 29, numeric: [25, 26, 27, 28, 29, 30]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 30), {currentPage: 30, numeric: [25, 26, 27, 28, 29, 30]});
+//     });
+
+//     QUnit.test("Test 'getPages' method (total < visible)", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {
+//             totalPages: 3,
+//             visiblePages: 5
+//         });
+//         assert.deepEqual(pag1.twbsPagination('getPages', 1), {currentPage: 1, numeric: [1, 2, 3]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 2), {currentPage: 2, numeric: [1, 2, 3]});
+//         assert.deepEqual(pag1.twbsPagination('getPages', 3), {currentPage: 3, numeric: [1, 2, 3]});
+//     });
+
+//     QUnit.test("Test classes appended for pagination", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {
+//             totalPages: 3,
+//             visiblePages: 5
+//         });
+//         assert.equal(pag1.find('.page-item').length, 7);
+//         assert.equal(pag1.find('.next').length, 1);
+//         assert.equal(pag1.find('.prev').length, 1);
+//         assert.equal(pag1.find('.last').length, 1);
+//         assert.equal(pag1.find('.first').length, 1);
+//         assert.equal(pag1.find('.page-item.active').length, 1);
+//         assert.equal(pag1.find('.prev.disabled').length, 1);
+//         assert.equal(pag1.find('.first.disabled').length, 1);
+//     });
+
+//     QUnit.test("Test custom classes appended for pagination", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {
+//             totalPages: 10,
+//             visiblePages: 5,
+//             pageClass: 'my-page',
+//             nextClass: 'my-next-page',
+//             prevClass: 'my-prev-page',
+//             lastClass: 'my-last-page',
+//             firstClass: 'my-first-page',
+//             activeClass: 'my-active-class',
+//             disabledClass: 'my-disabled-class'
+//         });
+//         assert.equal(pag1.find('.my-page').length, 5);
+//         assert.equal(pag1.find('.my-next-page').length, 1);
+//         assert.equal(pag1.find('.my-prev-page').length, 1);
+//         assert.equal(pag1.find('.my-last-page').length, 1);
+//         assert.equal(pag1.find('.my-first-page').length, 1);
+//         assert.equal(pag1.find('.my-page.my-active-class').length, 1);
+//         assert.equal(pag1.find('.my-prev-page.my-disabled-class').length, 1);
+//         assert.equal(pag1.find('.my-first-page.my-disabled-class').length, 1);
+//     });
+
+//     QUnit.test("Test page numbers text", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {
+//             totalPages: 2
+//         });
+//         assert.equal(pag1.find('.page-item:eq(2)').text(), '1');
+//         assert.equal(pag1.find('.next').text(), 'Next');
+//         assert.equal(pag1.find('.prev').text(), 'Previous');
+//         assert.equal(pag1.find('.first').text(), 'First');
+//         assert.equal(pag1.find('.last').text(), 'Last');
+//     });
+
+//     QUnit.test("Test custom texts", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {
+//             totalPages: 2,
+//             page: '[{{page}}]',
+//             first: '(first)',
+//             prev: '<<',
+//             next: '>>',
+//             last: '(last)[{{total_pages}}]'
+//         });
+//         assert.equal(pag1.find('.page-item:eq(2)').text(), '[1]');
+//         assert.equal(pag1.find('.next').text(), '>>');
+//         assert.equal(pag1.find('.prev').text(), '<<');
+//         assert.equal(pag1.find('.first').text(), '(first)');
+//         assert.equal(pag1.find('.last').text(), '(last)[2]');
+//     });
+
+//     QUnit.test("Test 'getPageFromQueryString' method", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {pageVariable: 'page'});
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', '?page=1'), 1);
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', '?page='), null);
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', '?page'), null);
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', '?'), null);
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', ''), null);
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', '?page=2'), 2);
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', '?page=3&param=taram'), 3);
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', '?page=4&param=test&opilki'), 4);
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', '?page=5&param=test or not&opilki='), 5);
+//         assert.equal(pag1.twbsPagination('getPageFromQueryString', '?ID=1&keyWord=net&page=6'), 6);
+//     });
+
+//     QUnit.test("Test 'generateQueryString' method", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {pageVariable: 'page'});
+//         assert.equal(pag1.twbsPagination('generateQueryString', 1, '?page=1'), '?page=1');
+//         assert.equal(pag1.twbsPagination('generateQueryString', 1, '?page='), '?page=1');
+//         assert.equal(pag1.twbsPagination('generateQueryString', 1, '?page'), '?page=1');
+//         assert.equal(pag1.twbsPagination('generateQueryString', 1, '?'), '');
+//         assert.equal(pag1.twbsPagination('generateQueryString', 1, ''), window.location.search);
+
+//         assert.equal(pag1.twbsPagination('generateQueryString', 2, '?page=1'), '?page=2');
+//         assert.equal(pag1.twbsPagination('generateQueryString', 3, '?page=2&param=taram'), '?page=3&param=taram');
+//         assert.equal(pag1.twbsPagination('generateQueryString', 4, '?page=3&param=test&opilki'), '?page=4&param=test&opilki');
+//         assert.equal(pag1.twbsPagination('generateQueryString', 5, '?page=4&param=test or not&opilki='), '?page=5&param=test or not&opilki=');
+//         assert.equal(pag1.twbsPagination('generateQueryString', 6, '?ID=1&keyWord=net&page=50'), '?ID=1&keyWord=net&page=6');
+//     });
+
+//     QUnit.test("Test 'hideOnlyOnePage' option", function (assert) {
+//         var page = null;
+
+//         destroyAndCreateWithOpts(pag1, {onPageClick: function (evt, p) {
+//             page = p;
+//         }});
+//         assert.equal(pag1.find('li').length, 5, 'Default options values');
+//         assert.equal(page, 1);
+//         page = null;
+
+//         destroyAndCreateWithOpts(pag1, {
+//             hideOnlyOnePage: true,
+//             onPageClick: function (evt, p) {
+//                 page = p;
+//             }
+//         });
+//         assert.equal(pag1.find('li').length, 0, 'Hide one page is corresponding option set as true');
+//         assert.equal(page, 1);
+//         page = null;
+//     });
+
+//     var checkCommon = function (assert) {
+//         assert.ok($(pag1.find('li').get(0)).hasClass('first'));
+//         assert.ok($(pag1.find('li').get(1)).hasClass('prev'));
+//         assert.ok($(pag1.find('li').get(-1)).hasClass('last'));
+//         assert.ok($(pag1.find('li').get(-2)).hasClass('next'));
+//     };
+//     var checkLeftBound = function (assert) {
+//         checkCommon(assert);
+//         var disabledClass = pag1.data('twbs-pagination').options.disabledClass;
+//         assert.ok($(pag1.find('li').get(0)).hasClass(disabledClass));
+//         assert.ok($(pag1.find('li').get(1)).hasClass(disabledClass));
+//         assert.ok(! $(pag1.find('li').get(-1)).hasClass(disabledClass));
+//         assert.ok(! $(pag1.find('li').get(-2)).hasClass(disabledClass));
+//     };
+//     var checkMiddle = function (assert) {
+//         checkCommon(assert);
+//         var disabledClass = pag1.data('twbs-pagination').options.disabledClass;
+//         assert.ok(! $(pag1.find('li').get(0)).hasClass(disabledClass));
+//         assert.ok(! $(pag1.find('li').get(1)).hasClass(disabledClass));
+//         assert.ok(! $(pag1.find('li').get(-1)).hasClass(disabledClass));
+//         assert.ok(! $(pag1.find('li').get(-2)).hasClass(disabledClass));
+//     };
+//     var checkRightBound = function (assert) {
+//         checkCommon(assert);
+//         var disabledClass = pag1.data('twbs-pagination').options.disabledClass;
+//         assert.ok(! $(pag1.find('li').get(0)).hasClass(disabledClass));
+//         assert.ok(! $(pag1.find('li').get(1)).hasClass(disabledClass));
+//         assert.ok($(pag1.find('li').get(-1)).hasClass(disabledClass));
+//         assert.ok($(pag1.find('li').get(-2)).hasClass(disabledClass));
+//     };
+//     var testSimple = function (assert, bound) {
+//         destroyAndCreateWithOpts(pag1, { totalPages: bound, visiblePages: bound });
+
+//         var twice = 2;
+//         while (twice > 0) {
+//             checkLeftBound(assert);
+//             assert.ok($(pag1.find('li').get(2)).hasClass('active'));
+//             $(pag1.find('li').get(2)).trigger('click');
+//             twice--;
+//         }
+
+//         var i = 3;
+//         while (i < (bound + 1)) {
+//             $(pag1.find('li').get(i)).trigger('click');
+//             assert.ok($(pag1.find('li').get(i)).hasClass('active'));
+//             checkMiddle(assert);
+//             i++;
+//         }
+
+//         $(pag1.find('li').get(i)).trigger('click');
+//         assert.ok($(pag1.find('li').get(i)).hasClass('active'));
+//         checkRightBound(assert);
+//     };
+//     QUnit.test("Testing default UI behaviour (Total: 5, Visible: 5)", function (assert) {
+//         testSimple(assert, 5);
+//     });
+
+//     QUnit.test("Testing default UI behaviour (Total: 10, Visible: 10)", function (assert) {
+//         testSimple(assert, 10);
+//     });
+
+//     QUnit.test("Testing default UI behaviour (Total: 20, Visible: 5)", function (assert) {
+//         destroyAndCreateWithOpts(pag1, { totalPages: 20, visiblePages: 5 });
+
+//         var twice = 2;
+//         while (twice > 0) {
+//             checkLeftBound(assert);
+//             assert.ok($(pag1.find('li').get(2)).hasClass('active'));
+//             $(pag1.find('li').get(2)).trigger('click');
+//             twice--;
+//         }
+
+//         var i = 3;
+//         while (true) {
+//             if (i < 5) {
+//                 $(pag1.find('li').get(i)).trigger('click');
+//                 assert.ok($(pag1.find('li').get(i)).hasClass('active'));
+//             } else {
+//                 $(pag1.find('li').get(5)).trigger('click');
+//                 assert.ok($(pag1.find('li').get(4)).hasClass('active'));
+//                 if (i > 18) {
+//                     break;
+//                 }
+//             }
+//             checkMiddle(assert);
+//             i++;
+//         }
+
+//         $(pag1.find('li').get(5)).trigger('click');
+//         assert.ok($(pag1.find('li').get(5)).hasClass('active'));
+//         checkMiddle(assert);
+
+//         $(pag1.find('li').get(6)).trigger('click');
+//         assert.ok($(pag1.find('li').get(6)).hasClass('active'));
+//         checkRightBound(assert);
+//     });
+
+//     QUnit.test("Testing default UI behaviour (Total: 5, Visible: 3) / Click on buttons", function (assert) {
+//         destroyAndCreateWithOpts(pag1, { totalPages: 5, visiblePages: 3 });
+
+//         // click next btn
+//         $(pag1.find('li').get(5)).trigger('click');
+//         checkMiddle(assert);
+
+//         // click last btn
+//         $(pag1.find('li').get(6)).trigger('click');
+//         checkRightBound(assert);
+
+//         // click prev btn
+//         $(pag1.find('li').get(1)).trigger('click');
+//         checkMiddle(assert);
+
+//         // click first btn
+//         $(pag1.find('li').get(0)).trigger('click');
+//         checkLeftBound(assert);
+//     });
+
+//     QUnit.test("Testing 'enable' and 'disable' methods", function (assert) {
+//         destroyAndCreateWithOpts(pag1, { totalPages: 5, visiblePages: 3 });
+//         checkLeftBound(assert);
+
+//         var disabledClass = pag1.data('twbs-pagination').options.disabledClass;
+//         var activeClass = pag1.data('twbs-pagination').options.activeClass;
+
+//         pag1.twbsPagination('disable');
+//         var dCnt = 0, aCnt = 0;
+//         pag1.find('li').each(function () {
+//             var $this = $(this);
+//             if (!$this.hasClass(activeClass)) {
+//                 assert.ok($this.hasClass(disabledClass));
+//                 dCnt++;
+//             } else {
+//                 aCnt++;
+//             }
+//         });
+//         assert.equal(6, dCnt);
+//         assert.equal(1, aCnt);
+
+//         pag1.twbsPagination('enable');
+//         checkLeftBound(assert);
+//     });
+
+//     QUnit.test("Testing 'onPageClick' methods", function (assert) {
+//         var $html = $('<ul id="test-pagination">' +
+//             '<li id="page-1">Page1</li>' +
+//             '<li id="page-2">Page2</li>' +
+//             '<li id="page-3">Page3</li>' +
+//             '</ul>').appendTo('body');
+//         assert.ok($('body').find('#test-pagination').length > 0);
+//         var calledEvt = false;
+//         var calledPage = false;
+//         var calledCnt = 0;
+//         var testClick = function (evt, page) {
+//             calledEvt = evt;
+//             calledPage = page;
+//             calledCnt++;
+//         };
+//         $html.twbsPagination({
+//             onPageClick: testClick,
+//             totalPages: 3
+//         });
+//         var pagination = $html.data('twbsPagination');
+//         assert.ok(pagination.options.totalPages === 3);
+//         assert.ok(calledPage === 1, "onPageClick should be called with first page on initialization");
+//         assert.ok(typeof calledEvt === "object", "onPageClick should be called with event object");
+//         assert.ok(calledCnt === 1, "onPageClick should be called once on initialization");
+//         $html.remove();
+//     });
+
+//     QUnit.test("Testing 'onPageClick' triggering events", function (assert) {
+//         var $html = $('<ul id="test-pagination">' +
+//             '<li id="page-1">Page1</li>' +
+//             '<li id="page-2">Page2</li>' +
+//             '<li id="page-3">Page3</li>' +
+//             '</ul>').appendTo('body');
+//         var calledEvt = false;
+//         var calledPage = false;
+//         var calledCnt = 0;
+//         var testClick = function (evt, page) {
+//             calledEvt = evt;
+//             calledPage = page;
+//             calledCnt++;
+//         };
+//         $html.twbsPagination({
+//             onPageClick: testClick,
+//             totalPages: 3
+//         });
+//         var pagination = $html.data('twbsPagination');
+//         $html.trigger('page', 2);
+//         $html.trigger('page', 1);
+//         $html.trigger('page', 3);
+//         assert.ok(pagination.options.totalPages === 3);
+//         // Should be equal to latest page
+//         assert.ok(calledPage === 3, "called page should be equal to latest triggered page = " + calledPage);
+//         assert.ok(typeof calledEvt === "object", "called event should be available");
+//         assert.ok(calledCnt === 4, "called count should be equal to first+all triggered counts = " + calledCnt);
+//         $html.remove();
+//     });
+
+//     QUnit.test("Testing 'onPageClick' with show method", function (assert) {
+//         var $html = $('<ul id="test-pagination">' +
+//             '<li id="page-1">Page1</li>' +
+//             '<li id="page-2">Page2</li>' +
+//             '<li id="page-3">Page3</li>' +
+//             '</ul>').appendTo('body');
+//         var calledEvt = false;
+//         var calledPage = false;
+//         var calledCnt = 0;
+//         var testClick = function (evt, page) {
+//             calledEvt = evt;
+//             calledPage = page;
+//             calledCnt++;
+//         };
+//         $html.twbsPagination({
+//             onPageClick: testClick,
+//             totalPages: 3
+//         });
+//         var pagination = $html.data('twbsPagination');
+//         pagination.show(2);
+//         pagination.show(1);
+//         pagination.show(3);
+//         assert.ok(pagination.options.totalPages === 3);
+//         // Should be equal to latest page
+//         assert.ok(calledPage === 3, "called page should be equal to latest triggered page = " + calledPage);
+//         assert.ok(typeof calledEvt === "object");
+//         assert.ok(calledCnt === 4, "called count should be equal to first+all triggered counts = " + calledCnt);
+//         $html.remove();
+//     });
+
+//     QUnit.test("Testing throws error with show method", function (assert) {
+//         var $html = $('<ul id="test-pagination">' +
+//             '<li id="page-1">Page1</li>' +
+//             '<li id="page-2">Page2</li>' +
+//             '<li id="page-3">Page3</li>' +
+//             '</ul>').appendTo('body');
+//         $html.twbsPagination({
+//             totalPages: 3
+//         });
+//         var pagination = $html.data('twbsPagination');
+//         assert.throws(function () {
+//                 pagination.show(20)
+//             }, "error should be thrown if wrong page provided"
+//         );
+//         $html.remove();
+//     });
+
+//     QUnit.test("Test 'changeTotalPages' method", function (assert) {
+//         destroyAndCreateWithOpts(pag1, {
+//             totalPages: 6,
+//             visiblePages: 5
+//         });
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 30, 1), {currentPage: 1, numeric: [1, 2, 3, 4, 5]});
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 30, 2), {currentPage: 2, numeric: [1, 2, 3, 4, 5]});
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 30, 3), {currentPage: 3, numeric: [1, 2, 3, 4, 5]});
+
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 40, 4), {currentPage: 4, numeric: [2, 3, 4, 5, 6]});
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 40, 5), {currentPage: 5, numeric: [3, 4, 5, 6, 7]});
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 40, 20), {currentPage: 20, numeric: [18, 19, 20, 21, 22]});
+
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 50, 47), {currentPage: 47, numeric: [45, 46, 47, 48, 49]});
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 50, 48), {currentPage: 48, numeric: [46, 47, 48, 49, 50]});
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 50, 49), {currentPage: 49, numeric: [46, 47, 48, 49, 50]});
+//         assert.deepEqual(pag1.twbsPagination('changeTotalPages', 50, 50), {currentPage: 50, numeric: [46, 47, 48, 49, 50]});
+//     });
 // });
 
 
 
-$(document).ready(function(){
-	var mc = {
-	    '0-19'     : 'bg-danger',
-	    '20-39'    : 'bg-warning',
-	    '40-59'    : 'bg-info',
-	    '60-79'    : 'bg-success',
-	    '80-100'   : ''
-	};
+/*var options = {
+                currentPage: 3,
+                totalPages: 10,
+                size:'large',
+                alignment:'center'
+            }
 
-	function between(x, min, max) {
-	  	return x >= min && x <= max;
-	}
-
-	var dc;
-	var first;
-	var second;
-	var th;
-
-	$('.progress-bar').each(function(index){
-
-    	th = $(this);
-
-    	dc = parseInt($(this).attr('data-color'),10);
+        $('#example').bootstrapPaginator(options);*/
 
 
-      	$.each(mc, function(name, value){
 
-	        first = parseInt(name.split('-')[0],10);
-	        second = parseInt(name.split('-')[1],10);
-
-	        // console.log(between(dc, first, second));
-
-	        if( between(dc, first, second) ){
-	          	th.addClass(value);
-	        }
-      	});
-  	});
-});
+// var $aboutMe = $('.aboutMe')
+// 	if(!$aboutMe.is(':visible')) {
+//     alert('#abouMe is not visible')
+// 	} else {
+// 		is visible
+// 		})
+// 	}
